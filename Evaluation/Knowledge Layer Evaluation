@@ -1,0 +1,9 @@
+## Knowledge Layer Evaluation
+
+The Knowledge Layer was evaluated by checking the alignment between:
+- the entity types and properties defined in the teleontology
+- the concepts and requirements expressed in the Competency Questions (CQs)
+
+The core entities (Activity and Location) allow the representation of all user scenarios, while contextual entities such as SkiSlope, HikingTrail, CycleRoute, and ClimbingRoute enable the modeling of domain-specific information.
+
+Overall, the teleontology provides sufficient coverage to address the majority of the defined competency questions.
