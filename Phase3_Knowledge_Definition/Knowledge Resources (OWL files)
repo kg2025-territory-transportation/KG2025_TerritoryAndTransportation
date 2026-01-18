@@ -1,0 +1,24 @@
+Knowledge Resources – Description
+
+osm.owl
+
+This ontology was used as the main reference ontology for the project.
+It provides a structured vocabulary for representing geographical entities, spatial features, and OpenStreetMap concepts.
+It was used to align entity types such as Location, Activity, Route, and Point of Interest, ensuring compatibility with OpenStreetMap standards and improving reusability.
+
+place-schema-org.owl
+
+This ontology fragment from Schema.org was used to model places and locations.
+It supported the definition of entities such as Place, Location, and ViewPoint, and helped formalize attributes related to names and geographic positioning.
+Its use improves interoperability with other Schema.org–based datasets.
+
+organization-schema-org.owl
+
+This ontology was used to represent organizations and services related to tourism and transportation.
+It supported the modeling of entities such as Hotel, Restaurant, and SkiRental, providing a reusable structure for service-related locations.
+This resource helped distinguish service providers from generic locations.
+
+dataproperties-schema-org.owl
+
+This ontology fragment was used to define and standardize data properties such as name, address, municipality, postal code, and similar attributes.
+It ensured consistency in the definition of literal values across different entity types and reduced ambiguity in property naming.
