@@ -1,0 +1,17 @@
+## Knowledge Graph Statistics
+
+The final Knowledge Graph is composed of the following main entity types:
+
+- Activity
+- Location
+- Coordinate
+- SkiSlope
+- HikingTrail
+- CycleRoute
+- ClimbingRoute
+- Hotel
+- Restaurant
+- SkiRental
+- ViewPoint
+
+The Knowledge Graph integrates multiple datasets extracted mainly from OpenStreetMap and public open data sources. Each entity is uniquely identified and enriched with domain-specific attributes.
