@@ -1,0 +1,193 @@
+Purpose Definition
+This section describes the purpose of the project and explains how this purpose is defined by following the iTelos methodology. The main goal of this phase is to clarify what the Knowledge Graph aims to achieve and what type of information it should be able to represent from the user’s point of view.
+Purpose Formalization
+The Purpose Formalization phase aims to transform the general project purpose into a structured and operational definition, following the iTelos methodology. This phase focuses on identifying realistic usage scenarios, representative personas, and a set of Competency Questions (CQs) that clearly express the information needs the Knowledge Graph must satisfy within the Territory and Transportation domain.
+The outcomes of this phase include the identification of relevant entity types, properties, and relationships, as well as the definition of a purpose-oriented ER model.
+SCENARIOS DEFINITION:
+To capture the diversity of user needs, a set of usage scenarios has been defined. Each scenario represents a realistic situation in which users interact with territorial and transportation-related information in the Trentino region.
+Luca Bianchi is planning a winter trip in Trentino with friends. He is looking for ski areas with slopes of different difficulty levels and nearby services such as ski rentals, restaurants, and accommodation. He is also interested in natural attractions close to the ski area.
+
+
+Claire Dubois is organising a family holiday in Trentino during summer. She is searching for safe and scenic cycling routes suitable for children, with nearby restaurants and hotels for multi-day stays.
+
+
+Marta Kowalska is planning a trekking experience in Trentino. She wants to find hiking trails with moderate difficulty that lead to mountain refuges and offer panoramic viewpoints along the route.
+
+
+Jonas Müller is interested in rock climbing activities in Trentino. He is looking for climbing areas offering routes with different difficulty levels, as well as nearby services such as equipment rental and refreshment points.
+
+
+Daniel Moretti is planning an outdoor-oriented trip focused on challenging climbing routes. He is interested in high-difficulty routes, nearby camping areas, and local restaurants offering traditional cuisine.
+
+PERSONAS:
+Based on the defined scenarios, the following personas have been identified:
+Persona
+Description
+Luca Bianchi
+25-year-old student living in Trento, passionate about skiing and winter sports.
+Claire Dubois
+45-year-old parent travelling with children, interested in safe outdoor activities and comfort.
+Marta Kowalska
+22-year-old Erasmus student who enjoys trekking and nature experiences.
+Jonas Müller
+30-year-old beginner climber looking for accessible climbing locations.
+Daniel Moretti
+32-year-old experienced climber seeking challenging routes and authentic local experiences.
+
+Table 1: Personas definition
+These personas provide a concrete representation of the final users and help guide the design of the Knowledge Graph.
+COMPETENCY QUESTIONS (CQs):
+The Competency Questions express the information needs derived from the scenarios and personas. The Knowledge Graph must be able to answer these questions.
+Persona
+No. 
+Question
+Luca Bianchi
+1.1
+Which ski areas are available in Trentino?
+Luca Bianchi
+1.2
+Which ski slopes offer higher difficulty levels?
+Luca Bianchi
+1.3
+Where can ski equipment be rented near the ski area?
+Luca Bianchi
+1.4
+Which restaurants are located near the ski area?
+Luca Bianchi
+1.5
+Are there hotels close to the ski area?
+Claire Dubois
+2.1
+Which cycling routes are suitable for families in Trentino?
+Claire Dubois
+2.2
+Which scenic cycling routes have restaurants nearby?
+Claire Dubois
+2.3
+Which hotels are located near cycling routes?
+Marta Kowalska
+3.1
+Which hiking trails lead to mountain refuges?
+Marta Kowalska
+3.2
+Which hiking trails have moderate difficulty?
+Marta Kowalska
+3.3
+Which hiking trails offer scenic viewpoints?
+Jonas Müller
+4.1
+Which climbing areas offer routes with different difficulty levels?
+Jonas Müller
+4.2
+Where can climbers rent climbing equipment?
+Jonas Müller
+4.3
+Where can climbers eat or rest near climbing areas?
+Daniel Moretti
+5.1
+Which climbing routes in Trentino have high difficulty grades?
+Daniel Moretti
+5.2
+Are there climbing areas with nearby camping facilities?
+Daniel Moretti
+5.3
+Which restaurants near climbing areas offer local cuisine?
+
+Table 2: Competency Questions
+
+CONCEPTS IDENTIFICATION:
+From the defined CQs, the main entity types and properties have been informally identified and classified according to their relevance.
+
+Figure 1: Purpose Formalization
+ER MODEL DEFINITION:
+The Entity–Relationship (ER) model represents the final outcome of the Purpose Formalization phase and is derived from the defined scenarios, personas, and Competency Questions.
+The model is centred on two main entities: Activity and Location, which are classified as common entities. Activity represents the main entry point of user queries, while Location represents the spatial context in which activities and services take place. The relationship between Activity and Location explicitly models where an activity occurs, avoiding redundancy in the definition of properties.
+Contextual entities such as SkiSlope, HikingTrail, CycleRoute, and ClimbingRoute are connected to Activity and contain activity-specific properties such as difficulty, length, elevation gain, or grade. This design allows the representation of different types of activities while keeping the core of the model simple and reusable.
+The Location entity is linked to Coordinate, which represents geographic information using latitude and longitude. This supports spatial queries and ensures compatibility with OpenStreetMap-based data sources.
+In addition, Hotel, Restaurant, SkiRental, and Building are connected to Location as core entities. These entities represent services that support user needs related to accommodation, food, and equipment rental, and are shared across multiple scenarios and activities.
+Finally, the ViewPoint entity is included as a contextual entity associated with specific activities, providing additional points of interest and enhancing the user experience without affecting the central structure of the model.
+This ER model provides a clear, coherent, and user-oriented structure that fully aligns with the identified entities and properties and serves as a solid foundation for the subsequent phases of the project.
+
+Figure 2: ER model
+
+
+REPORT:
+In this chapter, a solid foundation for the project has been established by clearly defining the project purpose, describing realistic usage scenarios, and formulating a set of Competency Questions. These elements ensure that the Knowledge Graph is designed to answer concrete user needs related to territory and transportation activities in the Trentino region.
+The definition of scenarios and personas helped to adopt a user-centred perspective, guiding the identification of key entities such as Activity and Location as central elements of the model. This approach allows users to explore different outdoor activities and easily discover related services and points of interest, such as accommodation, restaurants, rental services, and scenic viewpoints.
+A key strength of the proposed ER model is its clear separation between common, core, and contextual entities. This structure improves reusability and keeps the model flexible, allowing detailed descriptions of specific activities without overloading the central concepts. The inclusion of geographic information through coordinates further supports spatial exploration, which is essential in the chosen domain.
+A potential limitation of the current model concerns data availability and completeness. Some properties defined during the purpose formalization phase may not be fully supported by the available datasets. For this reason, the ER model may require refinements during the Information Gathering phase, where the model will be adjusted according to the quality and structure of the collected data. This iterative process ensures the development of a practical and purpose-driven Knowledge Graph.
+Information Gathering
+In this section, an overview of the main input data sources used in the project is provided. The goal of this phase is to identify and collect relevant knowledge and data resources that can support the construction of the Knowledge Graph, in accordance with the purpose and scope defined in the previous phase.
+The selected resources cover both structured knowledge sources and data value datasets related to territory, outdoor activities, and associated services in the Trentino region.
+
+KNOWLEDGE SOURCES:
+The primary knowledge source used in this project is OpenStreetMap (OSM), which provides structured and high-quality geographic data through a collaborative and community-driven approach. OSM offers a flexible tagging system that allows the representation of a wide range of entities related to territory and transportation, such as locations, activities, routes, buildings, and services.
+To ensure vocabulary consistency and reusability, the project aligns its main entity definitions with OSM concepts and tags whenever possible. In addition, selected concepts from Schema.org are used to support service-related entities such as hotels and restaurants, improving interoperability with external applications and datasets.
+All queries on OpenStreetMap data were performed using Overpass Turbo, a web-based tool that enables the extraction of specific geographic features within a defined area. Overpass Turbo was used to retrieve entities located in the Trentino region, filtering data according to the needs of the project.
+To enhance reusability and traceability, the OSMid attribute was included in all entities derived from OpenStreetMap data.
+ACTIVITY RESOURCES:
+The Activity resource is a data value dataset that represents the main types of outdoor activities included in the Knowledge Graph. This dataset is derived from activity-specific resources such as ski slopes, hiking trails, cycle routes, and climbing routes.
+Key attributes of the Activity dataset include:
+id
+type (e.g. skiing, hiking, cycling, climbing)
+The Activity entity serves as a unifying abstraction that allows different types of activities to be queried and compared in a consistent way.
+SKI SLOPES RESOURCES:
+The Ski Slopes resource provides information about ski slopes in the Trentino region. The dataset is obtained from OpenStreetMap and includes attributes describing the physical and functional characteristics of ski slopes.
+Key attributes include:
+osmId
+name
+difficulty
+length
+This resource supports Competency Questions related to skiing difficulty and slope availability.
+HIKING TRAILS RESOURCES:
+The Hiking Trails resource contains data about hiking paths within the Trentino region. The dataset is extracted from OpenStreetMap and enriched with computed properties where needed.
+Key attributes include:
+osmId
+name
+length
+elevationGain
+This resource enables queries related to trekking difficulty, distance, and elevation changes.
+CYCLE ROUTES RESOURCES:
+The Cycle Routes resource represents cycling paths and routes in the Trentino region. Data is collected from OpenStreetMap and processed to obtain relevant route characteristics.
+Key attributes include:
+osmId
+name
+length
+difficulty
+This dataset supports user needs related to cycling activities and route selection.
+
+CLIMBING ROUTES RESOURCES:
+The Climbing Routes resource provides information about climbing routes in the Trentino region. This dataset focuses on climbing-specific characteristics that are not fully covered by existing schemas.
+Key attributes include:
+osmId
+name
+grade
+sector
+Since no fully suitable predefined schema was found for climbing routes, the structure of this resource is defined according to the project’s needs.
+SERVICE RESOURCES:
+Service-related resources include Hotel, Restaurant, SkiRental, and Building entities. These datasets provide information about facilities that support user activities.
+Data for these entities is mainly derived from OpenStreetMap and includes attributes such as:
+osmId
+name
+address
+municipality
+starRating (for hotels)
+cuisine (for restaurants)
+These resources allow the Knowledge Graph to answer queries related to accommodation, food services, and equipment rental.
+LOCATION AND COORDINATE RESOURCES:
+The Location resource represents the spatial context shared by activities and services. It is constructed by integrating information from multiple datasets.
+Key attributes include:
+osmId
+name
+coordinate
+The Coordinate resource represents geographic positions using latitude and longitude and supports spatial queries such as proximity and location-based filtering.
+REPORT:
+During the Information Gathering phase, several challenges related to data availability and quality were encountered. While OpenStreetMap provides extensive coverage, some entities lacked complete or consistent information, requiring filtering and simplification of attributes.
+As a result, the initial ER model was kept intentionally simple, focusing on entities and properties that could be reliably supported by available data. Some attributes may be refined or extended in later phases, depending on data quality and completeness.
+Despite these limitations, the collected resources provide sufficient coverage to support the defined Competency Questions. The iterative nature of the iTelos methodology allows the model to be adjusted in subsequent phases to better align with the available data and project objectives.
+Evaluation – Purpose Definition
+The evaluation of the Purpose Definition phase focuses on assessing how the availability and quality of the identified information sources influenced the initial purpose of the project.
+During this phase, the originally defined usage scenarios, personas, and Competency Questions were reviewed considering the data that could be realistically obtained from the selected sources, mainly OpenStreetMap and complementary datasets.
+All the initially defined scenarios were considered feasible and therefore retained, as the available data adequately supports activities related to skiing, hiking, cycling, climbing, and associated services in the Trentino region. Similarly, the defined personas were confirmed, since their information needs can be addressed using the collected resources.
+Most of the initial Competency Questions could be supported by the identified data sources. However, some questions required a simplification of attributes due to data limitations or inconsistencies across datasets. These adjustments did not affect the core purpose of the project but helped to keep the Knowledge Graph aligned with reliable and reusable data.
+No major changes to the project’s domain of interest were required. The evaluation confirmed that the defined purpose is coherent with the available data and provides a solid foundation for the subsequent phases of the iTelos methodology.
