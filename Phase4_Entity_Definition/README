@@ -1,0 +1,25 @@
+# Entity Definition – Phase 4
+
+This folder contains the documentation related to **Phase 4: Entity Definition** of the iTelos methodology.
+
+In this phase, the knowledge layer and the data layer are merged to construct the final **Knowledge Graph (KG)**. The activities described here focus on how entities are identified, matched, and mapped using the teleontology defined in the previous phases and the datasets collected during the Information Gathering phase.
+
+## Contents
+
+- **entity_definition.md**  
+  Detailed description of the Entity Definition phase, including:
+  - Entity identification strategy
+  - Use of identifiers (e.g. OpenStreetMap IDs)
+  - Data-to-entity mapping decisions
+  - Integration of multiple datasets into a single Knowledge Graph
+  - Strengths, limitations, and design choices
+
+## Notes
+
+- This folder contains **documentation only**.  
+- Original datasets and ontologies are described in the **Metadata** and **Knowledge Definition** sections of the repository.
+- No raw data files are stored in this directory.
+
+## Methodology
+
+This work follows the **iTelos methodology** as defined in the course *Knowledge Graphs* (University of Trento).
