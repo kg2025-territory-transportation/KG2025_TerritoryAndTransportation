@@ -1,0 +1,10 @@
+## Query Execution
+
+The final Knowledge Graph was designed to support the execution of the Competency Questions defined in Phase 1.
+
+Most competency questions can be translated into SPARQL queries over the final Knowledge Graph, including queries related to:
+- available outdoor activities in a given area
+- nearby services such as hotels, restaurants, and ski rental shops
+- activity-specific characteristics such as difficulty, length, and elevation gain
+
+Due to time constraints, SPARQL queries were not fully implemented, but the structure of the Knowledge Graph ensures that the required information is explicitly represented and queryable.
