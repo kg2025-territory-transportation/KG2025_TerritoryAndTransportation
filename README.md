@@ -1,5 +1,3 @@
-# KG2025_TerritoryAndTransportation
-
 # KG2025 – Territory and Transport in Trentino
 
 This repository contains the complete development of a **Knowledge Graph (KG) project** carried out following the **iTelos methodology**, within the context of the *Knowledge Graphs* course (University of Trento).
