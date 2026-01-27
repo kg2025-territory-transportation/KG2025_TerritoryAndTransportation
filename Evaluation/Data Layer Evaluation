@@ -1,7 +1,0 @@
-## Data Layer Evaluation
-
-The data layer was evaluated in terms of completeness, consistency, and reusability.
-
-Most datasets extracted from OpenStreetMap include stable identifiers (OSM IDs), which improves entity reuse and integration. However, some datasets present limitations such as missing attributes or heterogeneous formats, which required data cleaning and normalization.
-
-Despite these limitations, the available data is sufficient to populate the Knowledge Graph and support the project goals.
